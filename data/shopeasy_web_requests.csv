@@ -1,0 +1,11 @@
+request,label
+"GET /products.php?category=electronics",0
+"GET /products.php?category=electronics' OR '1'='1",1
+"POST /login.php HTTP/1.1 Host: shopeasy.example.com Content-Type: application/x-www-form-urlencoded user=johndoe&pass=secret123",0
+"POST /login.php HTTP/1.1 Host: shopeasy.example.com Content-Type: application/x-www-form-urlencoded user=admin&pass=1'; DROP TABLE users;--",1
+"GET /search.php?q=laptops",0
+"GET /search.php?q=<script>alert('xss')</script>",1
+"GET /account.php?session=xyz789",0
+"GET /account.php?session=xyz789;ls -la",1
+"POST /checkout.php HTTP/1.1 Host: shopeasy.example.com Content-Type: application/x-www-form-urlencoded item=phone&price=500",0
+"GET /admin.php?cmd=whoami",1
